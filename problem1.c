@@ -1,3 +1,7 @@
+// SE 185
+// Made by Justin Soberano
+// November 13, 2021
+
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
@@ -32,9 +36,7 @@ int main () {
     for (i = 0; i < 4; i++) {
         fscanf(studentExam, "%s %lf %lf %lf", record[i].name, &record[i].examScore1, 
                                 &record[i].examScore2, &record[i].examScore3);
-        
         studentExamAverage = examAverage(record[i].examScore1, record[i].examScore2, record[i].examScore3);
-
         printf("%s exam scores = %.2lf, %.2lf, %.2lf\n", record[i].name, record[i].examScore1, 
                                                          record[i].examScore2, record[i].examScore3);
 
@@ -43,16 +45,13 @@ int main () {
     for (i = 0; i < 4; i++) {
         fscanf(studentExam, "%s %lf %lf %lf", record[i].name, &record[i].examScore1, 
                                 &record[i].examScore2, &record[i].examScore3);
-
         studentExamAverage = examAverage(record[i].examScore1, record[i].examScore2, record[i].examScore3);
-
         printf("%s exam average = %.2lf\n", record[i].name, studentExamAverage);
 
     }
 
 
 }
-
 
 double examAverage(double exam1, double exam2, double exam3) {
 
