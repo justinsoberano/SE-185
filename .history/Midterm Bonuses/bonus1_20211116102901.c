@@ -1,14 +1,15 @@
 #include <time.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include <math.h>
 
 void malelowAge(int age, int gender, int height, int weight) {
     double BMI;
     double BFP;
 
-    BMI = (weight / (height * height));
+    BMI = (weight / (pow(height,2)));
 
-    BFP = ((1.39 * BMI) + (0.16 * age) - (10.34 * gender) - 9);
+    BFP = (1.39 * BMI) + (0.16 * age) - (10.34 * gender) - 9;
 
     if (BFP >= 25) {
         printf("You body fat percentage is HIGH.\n");
@@ -27,9 +28,9 @@ void malemedAge(int age, int gender, int height, int weight) {
     double BMI;
     double BFP;
 
-    BMI = (weight / (height * height));
+    BMI = (weight / (pow(height,2)));
 
-    BFP = ((1.39 * BMI) + (0.16 * age) - (10.34 * gender) - 9);
+    BFP = (1.39 * BMI) + (0.16 * age) - (10.34 * gender) - 9;
 
     if (BFP >= 28) {
         printf("You body fat percentage is HIGH.\n");
@@ -48,9 +49,9 @@ void malehighAge(int age, int gender, int height, int weight) {
     double BMI;
     double BFP;
 
-    BMI = (weight / (height * height));
+    BMI = (weight / (pow(height,2)));
 
-    BFP = ((1.39 * BMI) + (0.16 * age) - (10.34 * gender) - 9);
+    BFP = (1.39 * BMI) + (0.16 * age) - (10.34 * gender) - 9;
 
     if (BFP >= 30) {
         printf("You body fat percentage is HIGH.\n");
@@ -69,9 +70,9 @@ void femalelowAge(int age, int gender, int height, int weight) {
     double BMI;
     double BFP;
 
-    BMI = (weight / (height * height));
+    BMI = (weight / (pow(height,2)));
 
-    BFP = ((1.39 * BMI) + (0.16 * age) - (10.34 * gender) - 9);
+    BFP = (1.39 * BMI) + (0.16 * age) - (10.34 * gender) - 9;
 
     if (BFP >= 39) {
         printf("You body fat percentage is HIGH.\n");
@@ -90,9 +91,9 @@ void femalemedAge(int age, int gender, int height, int weight) {
     double BMI;
     double BFP;
 
-    BMI = (weight / (height * height));
+    BMI = (weight / (pow(height,2)));
 
-    BFP = ((1.39 * BMI) + (0.16 * age) - (10.34 * gender) - 9);
+    BFP = (1.39 * BMI) + (0.16 * age) - (10.34 * gender) - 9;
 
     if (BFP >= 40) {
         printf("You body fat percentage is HIGH.\n");
@@ -111,15 +112,15 @@ void femalehighAge(int age, int gender, int height, int weight) {
     double BMI;
     double BFP;
 
-    BMI = (weight / (height * height));
+    BMI = (weight / (pow(height,2)));
 
-    BFP = ((1.39 * BMI) + (0.16 * age) - (10.34 * gender) - 9);
+    BFP = (1.39 * BMI) + (0.16 * age) - (10.34 * gender) - 9;
 
     if (BFP >= 42) {
         printf("You body fat percentage is HIGH.\n");
         printf("Your health may be at risk. Seek advice from a GP.\n");
     } else if (BFP > 36.01 && BFP < 42) { 
-         printf("Your body fat percentage is ABOVE AVERAGE.\n"); 
+         printf("Your bidy fat percentage is ABOVE AVERAGE.\n"); 
         printf("Make an honest assessment of your diet and excercise levels.\n");
     } else if (BFP <= 36) {
         printf("Your body fat percentage is NORMAL.\n");
@@ -142,7 +143,7 @@ int main() {
             printf("You are not old enough to take this test.\n");
             exit(0);
         } else if (age > 79) {
-            printf("\nWARNING: You may not get an accurate BMI\n\n");
+            printf("\n\nWARNING: You may not get an accurate BMI\n\n");
         }
     printf("Enter your height in meters (m): ");
     scanf("%lf", &height);
@@ -150,7 +151,7 @@ int main() {
     printf("Enter your weight in kilograms (kg): ");
     scanf("%lf", &weight);
 
-    printf("0 - Female\n1 - Male\n");
+    printf("0 - Female\n 1 - Male\n ");
     printf("What is your gender?: ");
     scanf("%d", &gender);
 
