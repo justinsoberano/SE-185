@@ -8,11 +8,11 @@ int main() {
     int diceTwo;
     int diceTotalPlayer;
     int diceTotalComputer;
-    long long int timeNumber;
+    time_t t;
 
     while(1) {
 
-       printf("\n\nEnter a lucky number: ");
+       printf("Enter a lucky number: ");
        scanf("%d", &luckyNumber); 
         if(luckyNumber == -99) {
             printf("\nEnding game\n");
@@ -21,31 +21,37 @@ int main() {
        srand(luckyNumber);
        diceOne = (rand() % 5) + 1;
        diceTwo = (rand() % 5) + 1;
-       diceTotalPlayer = diceOne + diceTwo;
+       diceTotal = diceOne + diceTwo;
 
        printf("\nPlayer Dice: %d - %d\n", diceOne, diceTwo);
        printf("Player sum: %d\n", diceTotalPlayer);
 
-       srand(time(NULL));
+       srand( (unsigned) time(&t) );
        diceOne = (rand() % 5) + 1;
        diceTwo = (rand() % 5) + 1;
-       diceTotalComputer = diceOne + diceTwo;
+       diceTotal = diceOne + diceTwo;
 
        printf("\n\nComputer Dice: %d - %d\n", diceOne, diceTwo);
        printf("Computer sum: %d\n", diceTotalComputer);
 
        if (diceTotalComputer < diceTotalPlayer) {
-           printf("\nYou Win!\n");
+           printf("You Win!");
        } else if (diceTotalComputer > diceTotalPlayer) {
-           printf("\nYou Lose!\n");
+           printf("You Lose!");
        } else if (diceTotalComputer == diceTotalPlayer) {
-           printf("\nTie!\n");
+           printf("Tie!");
        } else {
            printf("ERROR");
            exit(0);
        }
-    }
 
     return 0;
 
     }
+
+
+
+
+
+
+}

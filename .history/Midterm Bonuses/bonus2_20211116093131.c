@@ -12,7 +12,7 @@ int main() {
 
     while(1) {
 
-       printf("\n\nEnter a lucky number: ");
+       printf("Enter a lucky number: ");
        scanf("%d", &luckyNumber); 
         if(luckyNumber == -99) {
             printf("\nEnding game\n");
@@ -44,8 +44,14 @@ int main() {
            printf("ERROR");
            exit(0);
        }
-    }
 
     return 0;
 
     }
+
+
+
+
+
+
+}

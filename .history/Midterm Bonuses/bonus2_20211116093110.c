@@ -12,7 +12,7 @@ int main() {
 
     while(1) {
 
-       printf("\n\nEnter a lucky number: ");
+       printf("Enter a lucky number: ");
        scanf("%d", &luckyNumber); 
         if(luckyNumber == -99) {
             printf("\nEnding game\n");
@@ -35,17 +35,23 @@ int main() {
        printf("Computer sum: %d\n", diceTotalComputer);
 
        if (diceTotalComputer < diceTotalPlayer) {
-           printf("\nYou Win!\n");
+           printf("You Win!");
        } else if (diceTotalComputer > diceTotalPlayer) {
-           printf("\nYou Lose!\n");
+           printf("You Lose!");
        } else if (diceTotalComputer == diceTotalPlayer) {
-           printf("\nTie!\n");
+           printf("Tie!");
        } else {
            printf("ERROR");
            exit(0);
        }
-    }
 
     return 0;
 
     }
+
+
+
+
+
+
+}
