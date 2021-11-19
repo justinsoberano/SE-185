@@ -7,7 +7,7 @@
 #include <ncurses.h>
 #define WORDLENGTH 11
 #define MAXWORDS 100
-#define DEBUG 1   // Set this to 0 to disable debug output
+#define DEBUGM 1   // Set this to 0 to disable debug output
 #define PLYR '>'
 #define UP 0
 #define DOWN 1
@@ -21,28 +21,26 @@
 
 // Reads words from the file into WL and trims the whitespace off of the end
 // DO NOT MODIFY THIS FUNCTION
-
-int readWords(char* WL[MAXWORDS], char* file_name);
+int read_words(char* WL[MAXWORDS], char* file_name);
 
 // modifies str to trim white space off the right side
 // DO NOT MODIFY THIS FUNCTION
 void trimws(char* str);
-
 void draw_character(int x, int y, char use);
 void undo(char arr[80], int num);
 void clear(char *arr, int len);
 void back (char arr[80]);
 
+
 int main(int argc, char* argv[]) {
 	char* wordlist[MAXWORDS];
-	int wordCount;
+	int wordcount;
 	int i;
+	wordcount = read_words(wordlist, argv[1]);
 
-	wordCount = readWords(wordlist, argv[1]);
-
-	if (DEBUG) {
-		printf("Read %d words from %s \n", wordCount, argv[1]);
-		for (i = 0; i < wordCount; i++) {
+	if (DEBUGM) {
+		printf("Read %d words from %s \n", wordcount, argv[1]);
+		for (i = 0; i < wordcount; i++) {
 			printf("%s,", wordlist[i]);
 
 		}
@@ -122,7 +120,7 @@ int main(int argc, char* argv[]) {
 
         clear(currword, 11);
 
-        place = ax / 15 + ay * 15;
+        place ax / 15 + ay * 15;
 
         strcpy(currword, wordlist[place]);
 

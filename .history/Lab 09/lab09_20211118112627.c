@@ -21,19 +21,17 @@
 
 // Reads words from the file into WL and trims the whitespace off of the end
 // DO NOT MODIFY THIS FUNCTION
-
 int readWords(char* WL[MAXWORDS], char* file_name);
 
 // modifies str to trim white space off the right side
 // DO NOT MODIFY THIS FUNCTION
 void trimws(char* str);
-
 void draw_character(int x, int y, char use);
 void undo(char arr[80], int num);
 void clear(char *arr, int len);
 void back (char arr[80]);
 
-int main(int argc, char* argv[]) {
+void main(int argc, char* argv[]) {
 	char* wordlist[MAXWORDS];
 	int wordCount;
 	int i;
@@ -176,7 +174,6 @@ int main(int argc, char* argv[]) {
 
     refresh();
     endwin();
-    return 0;
 }
 	// most of your code goes here. Do not forget to include the ncurses library 
 
